@@ -1,0 +1,571 @@
+$bgHeader_Footer: #313030;
+$bgFirst_Section: #f6f2f2;
+$white: #ffffff;
+$underlineNone: none;
+$paddingHead: 100px 0;
+@import "../../node_modules/fontawesome-scss/fontAwesome";
+
+@mixin flex($just_content:null, $align_items:null) {
+  display: flex;
+  justify-content: $just_content;
+  align-items: $align_items;
+}
+
+@mixin fontText($fontSize,$fontFamily,$color) {
+  font-size: $fontSize;
+  font-family: $fontFamily;
+  color: $color;
+
+}
+
+@mixin fontP {
+  color: #585858;
+  font-size: 16px;
+  font-family: "Open Sans";
+}
+
+@mixin h2_title {
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 1.5;
+  padding-bottom: 50px;
+}
+
+@mixin link {
+  padding: 15px 50px;
+  background-color: #ff3b3b;
+  margin-top: 55px;
+  border-radius: 5px;
+  border: 3px solid #ff3b3b;
+  font-weight: bold;
+  @include fontText(18px, "Open Sans", white);
+}
+
+@mixin input {
+  background-color: #e5e5e5;
+  @include fontP;
+  outline: 0;
+  border: none;
+  border-radius: 10px;
+  padding: 20px 50px;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+main {
+
+  a {
+    text-decoration: $underlineNone;
+    display: inline-block;
+
+  }
+
+  .row {
+    @include flex;
+    flex-wrap: wrap;
+
+  }
+
+  header {
+    background-color: $bgHeader_Footer;
+    font-family: "Open Sans";
+
+    ul {
+      @include flex(center);
+
+      a {
+        color: $white;
+        padding: 40px 20px;
+        font-size: 14px;
+        outline: 0;
+
+        &:focus {
+          background-color: #ff2d2d;
+        }
+        &:hover {
+          background-color: #ff2d2d;
+        }
+        @media screen and (max-width: 480px) {
+          font-size: 12px;
+          padding: 30px 15px;
+        }
+      }
+    }
+  }
+
+  .our_organisation {
+    background-color: $bgFirst_Section;
+    padding: $paddingHead;
+    @media screen and (max-width: 767px) {
+      text-align: center;
+    }
+    h1 {
+      text-transform: uppercase;
+      padding-bottom: 30px;
+      line-height: 1.2;
+      font-weight: bold;
+      @include fontText(60px, "Open Sans", black);
+
+      @media screen and (max-width: 1199px) {
+        font-size: 50px;
+      }
+      @media screen and (max-width: 991px) {
+        font-size: 40px;
+      }
+      @media screen and (max-width: 480px) {
+        font-size: 30px;
+      }
+
+    }
+
+    p {
+      line-height: 1.5;
+      @include fontP;
+    }
+
+    a {
+      @include link;
+
+      &:hover {
+        background-color: transparent;
+        color: #ff3b3b;
+
+      }
+    }
+    .video {
+      @media (min-width: 767px) {
+        @include flex(flex-end,center);
+      }
+      @media screen and (max-width: 767px) {
+        @include flex(center);
+        margin-top: 30px;
+      }
+      iframe {
+        box-shadow: 0 0 100px black;
+        @media screen and (max-width: 1199px) {
+          width: 400px;
+          height: 300px;
+        }
+        @media screen and (max-width: 991px) {
+          width: 300px;
+          height: 200px;
+        }
+
+      }
+    }
+  }
+
+  .do_you_know {
+    padding: 100px 0 0;
+    @media screen and (max-width: 991px) {
+      text-align: center;
+    }
+    h2 {
+      @include fontText(42px, "Open Sans", #585858);
+      @include h2_title;
+      @media screen and (max-width: 480px) {
+        font-size: 30px;
+      }
+
+    }
+    p {
+      @include fontP;
+      line-height: 2;
+    }
+    a {
+      @include link;
+      background-color: transparent;
+      color: #ff2d2d;
+
+      &:hover {
+        background-color: #ff3b3b;
+        color: white;
+      }
+    }
+    .item {
+      @include flex;
+      @media screen and (max-width: 991px) {
+        margin-top: 30px;
+      }
+      @media screen and (max-width: 576px) {
+        display: inline-block;
+      }
+      h3 {
+        @include fontText(24px, "Open Sans", #4c4c4c);
+        font-weight: bold;
+        padding: 20px 0;
+      }
+      p {
+        line-height: 2;
+        @include fontP;
+      }
+
+      .second_line {
+        padding: 40px 20px;
+      }
+      .first_line {
+        padding: 0 20px;
+      }
+    }
+
+  }
+  .feature_product {
+    padding: 100px 0 0;
+    text-align: center;
+    .text {
+
+      padding-bottom: 60px;
+
+      h2 {
+        @include fontText(42px, "Open Sans", #585858);
+        @include h2_title;
+        padding-bottom: 30px;
+        @media screen and (max-width: 480px) {
+          font-size: 30px;
+        }
+      }
+      p {
+        @include fontP;
+        padding-bottom: 30px;
+        line-height: 1.5;
+      }
+      hr {
+        width: 130px;
+        border: 1px solid #ff2d2d;
+        background-color: #ff2d2d;
+      }
+    }
+
+    .tab {
+      @include flex(space-around);
+
+      button {
+        background-color: inherit;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding-bottom: 60px;
+        @include fontText(16px, "Open Sans", #4c4c4c);
+        font-weight: bolder;
+        text-transform: uppercase;
+        @media screen and (max-width: 576px) {
+          font-size: 12px;
+        }
+        @media screen and (max-width: 380px) {
+          font-size: 10px;
+        }
+      }
+
+      .active {
+        color: #ff2d2d
+      }
+    }
+
+    .tabcontent {
+      display: none;
+      padding: 6px 12px;
+      color: #707070;
+      img {
+        margin-left: 10px;
+      }
+    }
+
+    .active_tab {
+      display: block;
+    }
+
+  }
+  .our_team {
+    padding: 100px 0 0;
+    @media screen and (max-width: 991px) {
+      text-align: center;
+      hr {
+        margin: 0 auto;
+      }
+    }
+    .images {
+      padding: 0 30px 0 0;
+      @media screen and (max-width: 767px) {
+        padding: 0;
+      }
+
+      img {
+        width: 100%;
+        @media screen and (max-width: 767px) {
+          width: 60%;
+        }
+      }
+    }
+    .text {
+
+      h2 {
+        @include fontText(42px, "Open Sans", #585858);
+        @include h2_title;
+        @media screen and (max-width: 480px) {
+          font-size: 30px;
+        }
+      }
+      p {
+        @include fontP;
+
+        line-height: 2;
+      }
+
+      hr {
+        width: 130px;
+        border: 1px solid #ff3b3b;
+        margin: 15px 0 65px;
+      }
+      @media screen and (max-width: 991px) {
+        hr {
+          margin: 0 auto 40px;
+        }
+      }
+    }
+    h5 {
+      @include fontText(30px, "Open Sans", #585858);
+      text-transform: uppercase;
+    }
+    p {
+      @include fontP;
+      line-height: 1.5;
+      padding: 30px 0;
+    }
+    span {
+      @include fontText(18px, "Open Sans", #8f8f8f);
+      font-style: italic;
+      margin-left: 30px;
+      @media screen and (max-width: 576px) {
+        margin-left: 10px;
+        font-size: 14px;
+      }
+    }
+
+    .img-people {
+      @media screen and (min-width: 767px) {
+        @include flex();
+        padding-top: 60px;
+      }
+
+      .img-item {
+        padding: 20px 20px 0;
+
+        img {
+          width: 100%;
+
+        }
+
+        .wrap {
+          position: relative;
+
+          .name {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            text-align: center;
+            @include fontText(14px, "Open Sans", white);
+            background-color: #8f8f8f;
+            text-transform: uppercase;
+            padding: 10px 0;
+            opacity: 0;
+            transition: .5s;
+          }
+          &:hover .name {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+  }
+  .input {
+    background-color: #f5f0dd;
+    margin-top: 100px;
+    padding: 130px 0;
+    text-align: center;
+    @include flex(center, center);
+    h2 {
+      @include fontText(42px, "Open Sans", #8f8f8f);
+      font-weight: bold;
+      @media screen and (max-width: 480px) {
+        font-size: 30px;
+      }
+    }
+    p {
+      @include fontP;
+      padding: 30px 0 60px;
+    }
+    input {
+      width: 520px;
+      padding: 30px;
+      border-radius: 5px;
+      border: none;
+      outline: 0;
+      font-size: 18px;
+      letter-spacing: 5px;
+      @media screen and (max-width: 576px) {
+        width: 90%;
+      }
+      &::placeholder {
+        @include fontP;
+
+      }
+    }
+    a {
+      @include link;
+      padding: 25px 50px;
+      background-color: #ff2d2d;
+      text-transform: uppercase;
+
+      margin-left: 15px;
+      &:hover {
+        background-color: transparent;
+        color: #ff2d2d
+      }
+    }
+
+  }
+  .get_in_touch {
+    padding: 100px 0;
+
+    @media screen and (max-width: 991px) {
+      text-align: center;
+    }
+
+    h2 {
+      @include fontText(42px, "Open Sans", #585858);
+      @include h2_title;
+      @media screen and (max-width: 480px) {
+        font-size: 30px;
+      }
+    }
+    p {
+      @include fontP;
+      padding-bottom: 30px;
+      line-height: 2;
+    }
+    hr {
+      width: 130px;
+      border: 1px solid #ff2d2d;
+      margin: 15px auto 30px;
+    }
+    .input-field {
+      @include flex(space-between);
+      @media screen and (max-width: 480px) {
+        display: inline-block;
+      }
+    }
+    input {
+      @include input;
+      width: 45%;
+      @media screen and (max-width: 480px) {
+        width: 90%;
+        margin-top: 15px;
+      }
+    }
+    textarea {
+      @include input;
+      width: 100%;
+      margin: 40px 0;
+      height: 250px;
+    }
+    a {
+      @include link;
+      padding: 25px 0;
+      text-transform: uppercase;
+      width: 100%;
+      text-align: center;
+      &:hover {
+        background-color: transparent;
+        color: #ff2d2d;
+      }
+      @media screen and (max-width: 991px) {
+        margin: 0;
+      }
+    }
+
+    .contact_info {
+      background-color: #2d2d2d;
+      border-radius: 5px;
+      padding: 140px 80px;
+      @media screen and (min-width: 991px) {
+        margin-left: 90px;
+      }
+      @media screen and (max-width: 1199px) {
+        padding: 130px 40px;
+      }
+      @media screen and (max-width: 991px) {
+        padding: 25px 20px;
+        margin-top: 20px;
+      }
+      h5 {
+        @include fontText(18px, "Open Sans", white);
+        text-transform: uppercase;
+        font-weight: bold;
+        padding-bottom: 40px;
+      }
+      p {
+        @include fontP;
+        color: white;
+        line-height: 1.5;
+      }
+    }
+
+  }
+
+  footer {
+    background-color: $bgHeader_Footer;
+    padding: 50px 0;
+    @include fontText(16px, "Open Sans", white);
+    @media screen and (max-width: 576px) {
+      text-align: center;
+    }
+    .soc-link {
+      @include flex(flex-end);
+      @media screen and (max-width: 576px) {
+        @include flex(center);
+        margin-top: 20px;
+      }
+      li {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: white;
+        @include flex(center, center);
+        &:not(:last-child) {
+          margin-right: 15px;
+        }
+      }
+
+      .tw {
+        @include fa($fa-twitter, #313030, 20px);
+        &:hover {
+          @include fa($fa-twitter, deepskyblue, 20px);
+        }
+      }
+      .in {
+        @include fa($fa-linkedin, #313030, 20px);
+        &:hover {
+          @include fa($fa-linkedin, fuchsia, 20px)
+        }
+      }
+      .google {
+        @include fa($fa-google, #313030, 20px);
+        &:hover {
+          @include fa($fa-google, #ff2d2d, 20px);
+        }
+      }
+      .fb {
+        @include fa($fa-facebook, #313030, 20px);
+        &:hover {
+          @include fa($fa-facebook, blue, 20px);
+        }
+      }
+    }
+  }
+
+}
